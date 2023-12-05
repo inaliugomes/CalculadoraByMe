@@ -4,24 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Appcolor"
     android:padding="10dp"
     tools:context=".MainActivity">
 
 
-    <TextView
+    <LinearLayout
         android:id="@+id/text_resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/screem"
+            android:backgroundTint="@color/screemcolor"
+            android:padding="20dp"
+            android:text="0"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="36sp"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
 
     <Button
+
         android:id="@+id/button_AC"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@color/teal_200"
         android:text="@string/ac"
         app:layout_constraintEnd_toStartOf="@id/button_parentese"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +51,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@color/blue"
         android:text="@string/parentece"
         app:layout_constraintEnd_toStartOf="@id/button_percentage"
         app:layout_constraintStart_toEndOf="@+id/button_AC"
@@ -42,6 +62,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@color/blue"
         android:text="@string/percentage"
         app:layout_constraintEnd_toStartOf="@id/button_divide"
         app:layout_constraintStart_toEndOf="@id/button_parentese"
@@ -52,6 +73,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@color/blue"
         android:text="@string/divide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_percentage"
@@ -63,6 +85,7 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="@string/_7"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/button_8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_AC"
@@ -75,6 +98,7 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="@string/_8"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/button_9"
         app:layout_constraintStart_toEndOf="@id/button_7"
         app:layout_constraintTop_toBottomOf="@id/button_parentese"
@@ -87,6 +111,7 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="@string/_9"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/button_x"
         app:layout_constraintStart_toEndOf="@id/button_8"
         app:layout_constraintTop_toBottomOf="@id/button_percentage"
@@ -98,6 +123,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@color/blue"
         android:text="@string/x"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button_9"
@@ -111,6 +137,7 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="4"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/button_5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_7"
@@ -123,9 +150,10 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="5"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/button_6"
         app:layout_constraintStart_toEndOf="@id/button_4"
         app:layout_constraintTop_toBottomOf="@id/button_8"
-        app:layout_constraintEnd_toStartOf="@id/button_6"
 
         />
 
@@ -135,9 +163,10 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="6"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/button_subtration"
         app:layout_constraintStart_toEndOf="@id/button_5"
         app:layout_constraintTop_toBottomOf="@id/button_9"
-        app:layout_constraintEnd_toStartOf="@id/button_subtration"
 
         />
 
@@ -146,10 +175,11 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@color/blue"
         android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button_6"
         app:layout_constraintTop_toBottomOf="@id/button_x"
-        app:layout_constraintEnd_toEndOf="parent"
 
         />
 
@@ -159,10 +189,10 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="1"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/button_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_4"
-        />
+        app:layout_constraintTop_toBottomOf="@id/button_4" />
 
     <Button
         android:id="@+id/button_2"
@@ -170,10 +200,10 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="2"
-        app:layout_constraintStart_toEndOf="@id/button_1"
-        app:layout_constraintTop_toBottomOf="@id/button_5"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/button_3"
-        />
+        app:layout_constraintStart_toEndOf="@id/button_1"
+        app:layout_constraintTop_toBottomOf="@id/button_5" />
 
     <Button
         android:id="@+id/button_3"
@@ -181,21 +211,21 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="3"
-        app:layout_constraintStart_toEndOf="@id/button_2"
-        app:layout_constraintTop_toBottomOf="@id/button_6"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/button_plus"
-        />
+        app:layout_constraintStart_toEndOf="@id/button_2"
+        app:layout_constraintTop_toBottomOf="@id/button_6" />
 
     <Button
         android:id="@+id/button_plus"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
+        android:backgroundTint="@color/blue"
         android:text="+"
-        app:layout_constraintStart_toEndOf="@id/button_3"
-        app:layout_constraintTop_toBottomOf="@id/button_subtration"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toEndOf="@id/button_3"
+        app:layout_constraintTop_toBottomOf="@id/button_subtration" />
 
     <Button
         android:id="@+id/button_0"
@@ -203,9 +233,10 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/button_dot"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_1"
-        />
+        app:layout_constraintTop_toBottomOf="@id/button_1" />
 
     <Button
         android:id="@+id/button_dot"
@@ -213,8 +244,31 @@
         android:layout_height="60dp"
         android:background="@drawable/round_button"
         android:text=","
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/button_delete"
         app:layout_constraintStart_toEndOf="@id/button_0"
-        app:layout_constraintTop_toBottomOf="@id/button_2"
-        />
+        app:layout_constraintTop_toBottomOf="@id/button_2" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_button"
+        android:text="del"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/button_iqual"
+        app:layout_constraintStart_toEndOf="@id/button_dot"
+        app:layout_constraintTop_toBottomOf="@id/button_3" />
+
+    <Button
+        android:id="@+id/button_iqual"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#FF8F00"
+        android:text="="
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_delete"
+        app:layout_constraintTop_toBottomOf="@id/button_plus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

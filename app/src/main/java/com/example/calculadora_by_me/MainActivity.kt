@@ -12,9 +12,13 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     var total: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //Use to hide the ActionBar
+        supportActionBar?.hide()
 
         binding.button0.setOnClickListener(this)
         binding.button1.setOnClickListener(this)
