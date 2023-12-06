@@ -20,12 +20,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/text_info"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/screem"
             android:backgroundTint="@color/screemcolor"
             android:padding="20dp"
-            android:text="0"
+            android:text=""
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:textSize="36sp"
