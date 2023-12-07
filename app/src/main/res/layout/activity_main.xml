@@ -10,27 +10,38 @@
 
 
     <LinearLayout
-        android:id="@+id/text_resultado"
+        android:id="@+id/Linear_resultado"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-
+        android:background="@drawable/screem"
         android:orientation="vertical"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/text_info"
+        android:id="@+id/text_info"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="20dp"
+        android:text=""
+        android:textSize="36sp"
+        android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/text_result"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/screem"
-            android:backgroundTint="@color/screemcolor"
+            android:layout_height="100dp"
             android:padding="20dp"
             android:text=""
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
             android:textSize="36sp"
             android:textColor="@color/white" />
+
+
+
+
 
     </LinearLayout>
 
@@ -45,7 +56,7 @@
         android:text="@string/ac"
         app:layout_constraintEnd_toStartOf="@id/button_parentese"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_resultado" />
+        app:layout_constraintTop_toBottomOf="@+id/Linear_resultado" />
 
     <Button
         android:id="@+id/button_parentese"
@@ -56,7 +67,7 @@
         android:text="@string/parentece"
         app:layout_constraintEnd_toStartOf="@id/button_percentage"
         app:layout_constraintStart_toEndOf="@+id/button_AC"
-        app:layout_constraintTop_toBottomOf="@+id/text_resultado" />
+        app:layout_constraintTop_toBottomOf="@+id/Linear_resultado" />
 
     <Button
         android:id="@+id/button_percentage"
@@ -67,7 +78,7 @@
         android:text="@string/percentage"
         app:layout_constraintEnd_toStartOf="@id/button_divide"
         app:layout_constraintStart_toEndOf="@id/button_parentese"
-        app:layout_constraintTop_toBottomOf="@+id/text_resultado" />
+        app:layout_constraintTop_toBottomOf="@+id/Linear_resultado" />
 
     <Button
         android:id="@+id/button_divide"
@@ -78,7 +89,7 @@
         android:text="@string/divide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_percentage"
-        app:layout_constraintTop_toBottomOf="@+id/text_resultado" />
+        app:layout_constraintTop_toBottomOf="@+id/Linear_resultado" />
 
     <Button
         android:id="@+id/button_7"
