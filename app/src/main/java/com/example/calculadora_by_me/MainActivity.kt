@@ -9,11 +9,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var binding: ActivityMainBinding
 
-    var total: Int = 0;
-    var valorTempString : String = ""
-    var valorEmString: String = ""
 
-
+    var valorStringInput : String = ""
+    var valorDisplay : String = ""
+    var lista = mutableListOf<String>()
+    var total = 0
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -57,9 +57,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (view.id == R.id.button_0) {
 
         } else if (view.id == R.id.button_1) {
-
+           receber(1)
         } else if (view.id == R.id.button_2) {
-
+            receber(2)
         } else if (view.id == R.id.button_3) {
 
         } else if (view.id == R.id.button_4) {
@@ -80,10 +80,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } else if (view.id == R.id.button_delete){
 
 
-
-
         }else if (view.id == R.id.button_plus){
-
+             lista.add(valorStringInput)
+            lista.add("+")
+            valorStringInput = ""
+            valorDisplay = valorDisplay.plus("+")
+            binding.textInfo.text = valorDisplay
 
 
         }else if (view.id == R.id.button_subtration){
@@ -98,11 +100,44 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         }else if(view.id == R.id.button_iqual){
 
+            lista.add(valorStringInput)
+
+            total = lista[0].toInt()
+            for(i in 1 until lista.size step  2){
+
+               val operacao = lista[i]
+                val numero = lista[i +1 ] as Int
+
+                total = when (operacao) {
+                    "+" -> total + numero
+                    //"-" -> total - numero
+                    //"*" -> total * numero
+                    //"/" -> total / numero
+
+                    else -> throw  java.lang.Exception("Error")
+                }
+
+                binding.textResult.text = total.toString()
+                lista.clear()
+                valorStringInput = " "
+
+
+            }
+
         }
 
 
 
     }
+
+    fun receber(number : Int ){
+        //Tranformação do numero em String
+        valorStringInput = valorStringInput.plus(number.toString())
+       valorDisplay = valorDisplay.plus(number.toString())
+        binding.textInfo.text = valorDisplay
+    }
+
+
 
 
 
