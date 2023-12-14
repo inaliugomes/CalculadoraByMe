@@ -3,6 +3,7 @@ package com.example.calculadora_by_me
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.calculadora_by_me.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -12,8 +13,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     var valorStringInput : String = ""
     var valorDisplay : String = ""
-    var lista = mutableListOf<String>()
-    var total = 0
+    var lista = mutableListOf<Any>()
+    var total : Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -81,11 +82,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         }else if (view.id == R.id.button_plus){
-             lista.add(valorStringInput)
+
+            lista.add(valorStringInput.toInt())
             lista.add("+")
-            valorStringInput = ""
             valorDisplay = valorDisplay.plus("+")
             binding.textInfo.text = valorDisplay
+            valorStringInput = ""
 
 
         }else if (view.id == R.id.button_subtration){
@@ -100,29 +102,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         }else if(view.id == R.id.button_iqual){
 
-            lista.add(valorStringInput)
+         lista.add(valorStringInput.toInt())
 
-            total = lista[0].toInt()
-            for(i in 1 until lista.size step  2){
-
-               val operacao = lista[i]
-                val numero = lista[i +1 ] as Int
-
-                total = when (operacao) {
-                    "+" -> total + numero
-                    //"-" -> total - numero
-                    //"*" -> total * numero
-                    //"/" -> total / numero
-
-                    else -> throw  java.lang.Exception("Error")
-                }
-
-                binding.textResult.text = total.toString()
-                lista.clear()
-                valorStringInput = " "
+         calculadorExpressao(lista)
 
 
-            }
 
         }
 
@@ -131,10 +115,44 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun receber(number : Int ){
+
         //Tranformação do numero em String
         valorStringInput = valorStringInput.plus(number.toString())
        valorDisplay = valorDisplay.plus(number.toString())
         binding.textInfo.text = valorDisplay
+
+    }
+
+    fun calculadorExpressao(vararg elementos: Any): Int {
+
+        //Modolo de 2 para garantir que existe pelo menos dois numero dentro do objeto
+        if (elementos.isEmpty() || elementos.size % 2 == 0){
+            throw java.lang.IllegalArgumentException("Expressão Invalida")
+        }
+
+        //Atribuição do primeiro valor para nosso resultado
+        val primeiroElemento = elementos[0]
+
+        if(primeiroElemento is Integer){
+
+            total = primeiroElemento.toInt()
+        }
+
+        for( i in 1 until elementos.size step 2 ){
+
+            val operação = elementos[i] as String
+            val numero:Int = elementos[i +1 ] as Int
+
+            total = when(operação){
+                "+" -> total + numero
+                "-" -> total - numero
+                "*" -> total * numero
+                "/" -> total / numero
+                else -> throw java.lang.IllegalArgumentException("Operação Inválida:")
+            }
+        }
+        binding.textResult.text = total.toString()
+        return total
     }
 
 
